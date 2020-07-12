@@ -1,9 +1,12 @@
 @echo off
 
+REM for文内の処理を同時処理させない遅延させる効果がある
 setlocal enabledelayedexpansion
 
 set result=1
 
+REM ファイル名一覧テキストから一行ずつ名前を取得
+REM 取得したファイル名で検索後当てはまるファイルをコピー
 for /f "delims=" %%a in (suuji.txt) do (
   set /a result= %%a
   echo !result!
