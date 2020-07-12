@@ -1,0 +1,11 @@
+@echo off
+
+setlocal enabledelayedexpansion
+
+set gyousuu=0
+set filename=name
+
+for /f "delims=:" %%A in ('findstr /n "E" filename.txt') do (
+  set /a gyousuu=%%A+1
+  echo !gyousuu!
+)
