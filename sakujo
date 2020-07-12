@@ -1,0 +1,11 @@
+@echo off
+
+setlocal enabledelayedexpansion
+
+set result=1
+
+for /f "delims=" %%a in (suuji.txt) do (
+  set /a result= %%a
+  echo !result!
+  del moto\!result!.txt
+)
