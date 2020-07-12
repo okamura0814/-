@@ -1,10 +1,12 @@
 @echo off
 
+REM for文内の処理を同時処理させない遅延させる効果がある
 setlocal enabledelayedexpansion
 
 set gyousuu=0
 set filename=name
 
+REM 文字を検索して行数を取得し1足している
 for /f "delims=:" %%A in ('findstr /n "E" filename.txt') do (
   set /a gyousuu=%%A+1
   echo !gyousuu!
